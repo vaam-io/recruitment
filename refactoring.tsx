@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, ReactElement } from 'react';
 
 export default function Fruits(): ReactElement {
   const [bananas, setBananas] = useState();
