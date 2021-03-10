@@ -1,12 +1,21 @@
 import React, { useEffect, useState, ReactElement } from 'react';
 
+/**
+ * API ENDPOINTS: 
+ * 
+ * /api/fruits => { fruits: { apples?: { brand: 'Pirom Parom'}, bananas?: { brand: "Chicken Eata'"} }}
+ * /api/bananas => { numberOfBananas: 42 }}
+ * /api/apples => { numberOfApple: 1337 }}
+ * 
+ */
+
 export default function Fruits(): ReactElement {
   const [bananas, setBananas] = useState();
   const [apples, setApples] = useState();
 
   useEffect(() => {
     const fetchFruits = async () => {
-      const response = await fetch(`/api/fruits`);
+      const response = await fetch(`/api/fruits`); 
       const json = await response.json();
       setBananas(json.fruits.bananas);
       setApples(json.fruits.apples);
@@ -72,7 +81,7 @@ function Apples(props: any): ReactElement {
 
   return (
     <div>
-      I have {numberOfApples} apples of the {brand} brand.
+      We have {numberOfApples} apples of the {brand} brand.
     </div>
   );
 }
